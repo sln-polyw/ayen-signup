@@ -15,6 +15,7 @@ import {
   SelectItem,
 } from '@nextui-org/react';
 import { Tooltip } from '@nextui-org/react';
+import './RegistrationPage.css';
 
 const RegistrationPage = () => {
   const [name, setName] = useState('');
@@ -92,15 +93,15 @@ const RegistrationPage = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4">
-      <Card>
-        <CardHeader className="flex gap-3">
-          <div className="flex flex-col">
-            <p className="text-md">Ayen Early Access Registration</p>
-          </div>
-        </CardHeader>
-        <CardBody>
-          <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="page-container">
+    <Card className="signup-card">
+      <CardHeader className="flex gap-3">
+        <div className="flex flex-col">
+          <p className="heading">Ayen Secret Alpha Access</p>
+        </div>
+      </CardHeader>
+      <CardBody>
+        <form onSubmit={handleSubmit} className="space-y-4">
             <Input
               label="Name"
               placeholder="Enter your name"
@@ -169,8 +170,7 @@ const RegistrationPage = () => {
             <Button
               type="submit"
               isDisabled={!termsAccepted || isLoading}
-              color="primary"
-              className="w-full"
+              className="register-button w-full"
             >
               {isLoading ? 'Registering...' : 'Register'}
             </Button>
@@ -194,7 +194,7 @@ const RegistrationPage = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </div>
+      </div>
   );
 };
 
